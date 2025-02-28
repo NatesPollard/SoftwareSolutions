@@ -39,6 +39,16 @@
             <option value="Consultant">Consultant</option>
             <option value="Research and Development">Research and Development</option>
         </select>
+
+        <br> <br>
+        <label for="job">Select a job type</label>
+        <select id="job">
+            <option value="Select">Select</option>
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
+            <option value="Internship">Internship</option>
+            <option value="Freelancer">Freelancer</option>
+        </select>
         <br> <br>
         <button type="submit">Submit</button>
         </form>
@@ -61,6 +71,13 @@
                 alert("Please select a vacancy.");
                 event.preventDefault(); // Prevent form submission
             }
+
+             // dont let the user submit the form if they have not selected a job type
+                var job = document.getElementById("job").value;
+                if (job == "Select") {
+                    alert("Please select a job type.");
+                    event.preventDefault(); // Prevent form submission
+                }
         });
     </script>
 </body>
