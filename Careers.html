@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboSolutions Careers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header> <h1>RoboSolutions</h1>
+    
+        <ul>
+            <!-- link the 4 pages -->
+            <a id="link" href="startup_website.html">Start Here</a>
+            <a id="link" href="homepage.html">Home</a>
+            <a id="link" href="customers.html">Our Customers</a>
+            <a id="link" href="OurFeilds.html">Our Feilds</a>
+            <a id="link" href="Careers.html">Careers</a>
+            <a id="link" href="calculations.html">Calculations</a>
+        </ul>
+    </header>
+<div id="careerpage">
+    <h1>Register</h1>
+<form id="jobForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" placeholder="Enter your full name" required>
+<br> <br>
+
+    <label for="experience">Experience in years</label>
+        <input type="number" id="experience" placeholder="Years of Experience" required>
+    <br> <br>
+        <!-- make a drop down list for different vavancies -->
+        <label for="vacancy">Select a vacancy</label>
+        <select id="vacancy" required>
+            <!-- add a default option -->
+            <option value="Select">Select</option>
+            <option value="Android Developer">Android Developer</option>
+            <option value="Full Stack Developer">Full Stack Developer</option>
+            <option value="Consultant">Consultant</option>
+            <option value="Research and Development">Research and Development</option>
+        </select>
+        <br> <br>
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        // JavaScript to validate the form
+        document.getElementById("jobForm").addEventListener("submit", function(event) {
+            // Get the value of the Full Name input
+            var fullName = document.getElementById("name").value.trim();
+
+            // Check if the Full Name is less than 8 characters
+            if (fullName.length < 8) {
+                alert("Please enter your full name (at least 8 characters).");
+                event.preventDefault(); // Prevent form submission
+            }
+
+            // dont let the user submit the form if they have not selected a vacancy
+            var vacancy = document.getElementById("vacancy").value;
+            if (vacancy == "Select") {
+                alert("Please select a vacancy.");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+</body>
+</html>
